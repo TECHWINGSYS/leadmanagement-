@@ -22,9 +22,9 @@ function AdminNavbar() {
         <Container>
           <Link to={'/Admin'} style={{ textDecoration: 'none' }}>
             <Navbar.Brand>
-            <h6 style={{color:"white"}} >ADMIN</h6>
-              
-            </Navbar.Brand>
+            <img  src="https://res.cloudinary.com/dqgrcovgg/image/upload/v1741189757/WHITE----_2_jzrvnj.png" height={'30px'} width={'130px'} alt="" />
+
+          </Navbar.Brand>
           </Link>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
