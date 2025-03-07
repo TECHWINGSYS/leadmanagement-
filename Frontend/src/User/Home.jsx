@@ -29,9 +29,9 @@ function Home() {
 
   useEffect(() => {
     if (logininfom) {
- 
-        setExecuId(logininfom.id);
-     
+
+      setExecuId(logininfom.id);
+
     }
   }, [logininfom]);
 
@@ -203,6 +203,8 @@ function Home() {
               </div>
             </div>
           )}
+
+
           <div className="middle_data_section_userHomepage">
             <div className="middle_inner_div_userHomepage">
               <input
@@ -226,6 +228,8 @@ function Home() {
               >
                 Recently Update
               </button>
+
+              {/* Table for Desktop */}
               <table className="customer_table_userhomepage">
                 <thead>
                   <tr>
@@ -241,40 +245,51 @@ function Home() {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredData.map((customer, index) => {
-                    const latestUpdateDate = customer.dailyUpdate
-                      ?.sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.date;
-
-                    return (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{customer.fullname}</td>
-                        <td>{customer.email}</td>
-                        <td>{customer.phone}</td>
-                        <td>{customer.course}</td>
-                        <td>{customer.method}</td>
-                        <td>{customer.status}</td>
-                        <td>
-                          {check === true
-                            ? new Date(latestUpdateDate).toLocaleDateString("en-GB")  // Display latest update if 'check' is true
-                            : new Date(customer.date).toLocaleDateString("en-GB")}
-                        </td>
-                        <td>
-                          <Link to={`/DailyCustomerUpdate/${customer._id}`}>
-                            <button className="customer_actions_button_userhomepage">
-                              Daily Update
-                            </button>
-                          </Link>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                {filteredData.map((customer, index) => {
+                  const latestUpdateDate = customer.dailyUpdate
+                    ?.sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.date;
+                
+                  return (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>
+                        <Link style={{textDecoration:'none'}} to={`/DailyCustomerUpdate/${customer._id}`}>
+                          {customer.fullname}
+                        </Link>
+                      </td>
+                      <td>{customer.email}</td>
+                      <td>{customer.phone}</td>
+                      <td>{customer.course}</td>
+                      <td>{customer.method}</td>
+                      <td>{customer.status}</td>
+                      <td>
+                        {check
+                          ? new Date(latestUpdateDate).toLocaleDateString("en-GB")
+                          : new Date(customer.date).toLocaleDateString("en-GB")}
+                      </td>
+                      <td>
+                        <Link to={`/DailyCustomerUpdate/${customer._id}`}>
+                          <button className="customer_actions_button_userhomepage">
+                            Daily Update
+                          </button>
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })}
+                
                 </tbody>
               </table>
 
-            </div>
 
+            </div>
           </div>
+
+
+
+
+
+
 
         </div>
       </div>
