@@ -7,6 +7,7 @@
   justify-content: center;
   padding-bottom: 5%;
 }
+
 .updatecustomerpage_innerdiv{
   width: 90%;
 }
@@ -82,7 +83,7 @@
 
 .updatecustomerpage_button {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #090856;
   color: white;
   border: none;
   border-radius: 5px;
@@ -96,9 +97,8 @@
 }
 
 .updatecustomerpage_button:hover {
-  background-color: #0056b3;
+  background-color: #0c0535;
 }
-
 
 .leave_reason_section {
   margin-top: 20px;
@@ -112,9 +112,6 @@
   font-size: 14px;
   color: #555;
 }
-
-
-
 
 .daily_updates_list {
   margin-top: 30px;
@@ -131,7 +128,7 @@
 
 .daily_update_item {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column; 
   border: 1px solid #ddd;
   padding: 10px;
   margin-bottom: 10px;
@@ -166,5 +163,116 @@
   color: #666;
   text-align: right;
   margin-left: 10px;
+}
+.call-button {
+  display: none;
+}
+
+
+
+@media (max-width: 768px) {
+  
+  .updatecustomerpage_container {
+    padding-top: 5%;
+    padding-bottom: 3%;
+  }
+
+  .updatecustomerpage_innerdiv {
+    width: 95%;
+  }
+
+  .updatecustomerpage_heading {
+    font-size: 20px; 
+    margin-bottom: 15px;
+  }
+
+  .customer_card {
+    padding: 15px; 
+  }
+
+  .customer_details {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .customer_label {
+    font-size: 13px; 
+  }
+
+  .updatecustomerpage_input {
+    font-size: 15px; 
+    padding: 8px; 
+  }
+
+  .updatecustomerpage_button {
+    width: 100%; 
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .daily_updates_list {
+    margin-top: 20px;
+  }
+
+  .daily_updates_box {
+    max-height: 300px; 
+    padding: 10px;
+  }
+
+  .daily_update_item {
+    padding: 8px;
+  }
+
+  .daily_update_content {
+    font-size: 14px; 
+  }
+
+  .daily_update_timestamp {
+    font-size: 0.8rem; 
+  }
+
+  .call-button {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: 3px solid rgb(10, 7, 72);
+  }
+  
+  .phone-icon {
+    font-size: 23px;
+  }
+}
+
+.loading{
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.spinner {
+  height: 40px;
+  width: 40px;
+  border-bottom: 2px solid blue;
+  border-top: 2px solid blue;
+  border: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
